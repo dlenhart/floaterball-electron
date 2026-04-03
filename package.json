@@ -1,0 +1,34 @@
+{
+  "name": "floaterball",
+  "version": "1.0.0",
+  "description": "Floater Ball — desktop game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^36.0.0",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "com.snowyworks.floaterball",
+    "productName": "Floater Ball",
+    "files": [
+      "main.js",
+      "game/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.games"
+    },
+    "linux": {
+      "target": ["AppImage", "deb", "rpm", "snap"],
+      "category": "Game"
+    },
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "game/assets/images/floater-ball-logo-light.png"
+    }
+  }
+}
