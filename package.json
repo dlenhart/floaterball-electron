@@ -14,6 +14,7 @@
   "build": {
     "appId": "com.snowyworks.floaterball",
     "productName": "Floater Ball",
+    "icon": "icon.png",
     "files": [
       "main.js",
       "game/**/*"
@@ -27,8 +28,7 @@
       "category": "Game"
     },
     "win": {
-      "target": ["nsis", "portable"],
-      "icon": "game/assets/images/floater-ball-logo-light.png"
+      "target": ["nsis", "portable"]
     }
   }
 }

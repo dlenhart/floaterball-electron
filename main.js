@@ -1,5 +1,7 @@
-const { app, BrowserWindow, shell } = require('electron')
+const { app, BrowserWindow, shell, Menu, nativeImage } = require('electron')
 const path = require('path')
+
+app.name = 'Floater Ball'
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -33,6 +35,31 @@ function createWindow () {
 }
 
 app.whenReady().then(() => {
+  app.setAboutPanelOptions({
+    applicationName: 'Floater Ball',
+    applicationVersion: '1.0.0',
+    version: '',
+    icon: nativeImage.createFromPath(path.join(__dirname, 'icon.png'))
+  })
+
+  const menu = Menu.buildFromTemplate([
+    {
+      label: 'Floater Ball',
+      submenu: [
+        { role: 'about', label: 'About Floater Ball' },
+        { type: 'separator' },
+        { role: 'services' },
+        { type: 'separator' },
+        { role: 'hide', label: 'Hide Floater Ball' },
+        { role: 'hideOthers' },
+        { role: 'unhide' },
+        { type: 'separator' },
+        { role: 'quit', label: 'Quit Floater Ball' }
+      ]
+    }
+  ])
+  Menu.setApplicationMenu(menu)
+
   createWindow()
 
   app.on('activate', () => {
