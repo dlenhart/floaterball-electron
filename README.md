@@ -38,12 +38,24 @@ Black obstacles start appearing at Level 2, starting at 3 and increasing by 1 ea
 - Obstacles increase each level (starting at Level 2: 3 obstacles, +1 per level)
 
 
-## Install
+## Building the Desktop App
 
-1. Download or clone the repository.
-2. Open `index.html` in a browser.
+Install dependencies first:
 
+```bash
+npm install
 ```
+
+Then use the `build.sh` script to compile for your target platform:
+
+```bash
+./build.sh          # Build for all platforms (default)
+./build.sh mac      # macOS DMG
+./build.sh linux    # Linux (AppImage, deb, rpm, snap)
+./build.sh win      # Windows (NSIS installer + portable exe)
+```
+
+Output is placed in the `./dist/` folder.
 
 ## License
 
