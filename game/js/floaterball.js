@@ -903,9 +903,8 @@ let FLTR = {
             FLTR.drawScorePopups();
 
             FLTR.text.text('Score: ' + FLTR.score + '  Level: ' + FLTR.level, 5, 14, 14, 'white');
-            FLTR.text.rightAlignedText(
-                'Time: ' + FLTR.timeLeft + 's  High score: ' + FLTR.highScore, FLTR.CANVAS_WIDTH - 5, 14, 14, 'white'
-            );
+            FLTR.text.rightAlignedText('Time: ' + FLTR.timeLeft + 's', FLTR.CANVAS_WIDTH - 5, 14, 14, 'white');
+            FLTR.text.rightAlignedText('High score: ' + FLTR.highScore, FLTR.CANVAS_WIDTH - 100, 14, 14, 'white');
 
             if (FLTR.gamePaused && !FLTR.levelTransition && !FLTR.gameEnded) {
                 const centerX = FLTR.CANVAS_WIDTH / 2;
