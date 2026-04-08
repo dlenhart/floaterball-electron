@@ -39,6 +39,7 @@ app.whenReady().then(() => {
     applicationName: 'Floater Ball',
     applicationVersion: '1.0.0',
     version: '',
+    copyright: 'Copyright © 2026 SnowyWorks',
     icon: nativeImage.createFromPath(path.join(__dirname, 'icon.png'))
   })
 
